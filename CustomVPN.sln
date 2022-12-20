@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomVPN", "CustomVPN\CustomVPN.csproj", "{E708B844-FE47-42FD-A8B9-59BD2854DE78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E708B844-FE47-42FD-A8B9-59BD2854DE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E708B844-FE47-42FD-A8B9-59BD2854DE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E708B844-FE47-42FD-A8B9-59BD2854DE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E708B844-FE47-42FD-A8B9-59BD2854DE78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE0DCFDB-8A81-453C-925F-6FD0321F5702}
+	EndGlobalSection
+EndGlobal
