@@ -16,12 +16,36 @@ namespace CustomVPN.MVVM.ViewModel
     {
         public ObservableCollection<ServerModel> Servers { get; set; }
         public RelayCommand ConnectCommand { get; set; }
+        public RelayCommand DisconnectCommand { get; set; }
         private string _connectionStatus;
+        private Visibility _connectButtonVisible;
+
+        public Visibility ConnectButtonVisible
+        {
+            get { return _connectButtonVisible; }
+            set
+            {
+                _connectButtonVisible = value;
+                OnPropertyChanged(nameof(ConnectButtonVisible));
+            }
+        }
+
+        private Visibility _disconnectButtonVisible;
+
+        public Visibility DisconnectButtonVisible
+        {
+            get { return _disconnectButtonVisible; }
+            set
+            {
+                _disconnectButtonVisible = value;
+                OnPropertyChanged(nameof(DisconnectButtonVisible));
+            }
+        }
 
         public string ConnectionStatus
         {
             get { return _connectionStatus; }
-            set 
+            set
             {
                 _connectionStatus = value;
                 OnPropertyChanged();
@@ -30,6 +54,8 @@ namespace CustomVPN.MVVM.ViewModel
 
         public ProtectionViewModel()
         {
+            ConnectButtonVisible = Visibility.Visible;
+            DisconnectButtonVisible = Visibility.Hidden;
             Servers = new ObservableCollection<ServerModel>();
             for (int i = 0; i < 10; i++)
             {
@@ -38,7 +64,7 @@ namespace CustomVPN.MVVM.ViewModel
                     Country = "USA"
                 });
             }
-            ConnectCommand = new RelayCommand(o => 
+            ConnectCommand = new RelayCommand(o =>
             {
                 Task.Run(() =>
                 {
@@ -46,7 +72,7 @@ namespace CustomVPN.MVVM.ViewModel
                     var process = new Process();
                     process.StartInfo.FileName = "cmd.exe";
                     process.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
-                    process.StartInfo.ArgumentList.Add(@"/c rasdial MyServer vpnbook twrszht /phonebook:./VPN/VPN.pbk");
+                    process.StartInfo.ArgumentList.Add(@"/c rasdial MyServer vpnbook rxtasfh /phonebook:./VPN/VPN.pbk");
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.Start();
@@ -56,6 +82,8 @@ namespace CustomVPN.MVVM.ViewModel
                         case 0:
                             Debug.WriteLine("Sucess!");
                             ConnectionStatus = "Connected!";
+                            ConnectButtonVisible = Visibility.Hidden;
+                            DisconnectButtonVisible = Visibility.Visible;
                             break;
                         case 691:
                             Debug.WriteLine("Wrong credentials!");
@@ -65,6 +93,23 @@ namespace CustomVPN.MVVM.ViewModel
                             Debug.WriteLine($"Error: {process.ExitCode}");
                             break;
                     }
+                });
+            });
+            DisconnectCommand = new RelayCommand(o =>
+            {
+                Task.Run(() =>
+                {
+                    ConnectionStatus = "Disconnecting...";
+                    var process = new Process();
+                    process.StartInfo.FileName = "cmd.exe";
+                    process.StartInfo.Arguments = @"/c rasdial /d";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.CreateNoWindow = true;
+                    process.Start();
+                    process.WaitForExit();
+                    ConnectButtonVisible = Visibility.Visible;
+                    DisconnectButtonVisible = Visibility.Hidden;
+                    ConnectionStatus = "";
                 });
             });
         }

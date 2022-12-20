@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CustomVPN.MVVM.View" xmlns:viewmodel="clr-namespace:CustomVPN.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
+             xmlns:local="clr-namespace:CustomVPN.MVVM.View" 
+             xmlns:viewmodel="clr-namespace:CustomVPN.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#1e1e1e">
@@ -42,7 +43,15 @@
                 Height="45"
                 Content="Connect"
                 Grid.Row="1"
+                Visibility="{Binding ConnectButtonVisible, UpdateSourceTrigger=PropertyChanged}"
                 Style="{StaticResource ConnectButtonStyle}"
                 Command="{Binding ConnectCommand}"/>
+        <Button Width="250"
+                Height="45"
+                Content="Disconnect"
+                Grid.Row="1"
+                Visibility="{Binding DisconnectButtonVisible, UpdateSourceTrigger=PropertyChanged}"
+                Style="{StaticResource DisconnectButtonStyle}"
+                Command="{Binding DisconnectCommand}"/>
     </Grid>
 </UserControl>

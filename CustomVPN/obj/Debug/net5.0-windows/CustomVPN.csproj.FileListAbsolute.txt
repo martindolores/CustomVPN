@@ -30,3 +30,4 @@ C:\Users\DoloresM\source\repos\CustomVPN\CustomVPN\obj\Debug\net5.0-windows\Them
 C:\Users\DoloresM\source\repos\CustomVPN\CustomVPN\obj\Debug\net5.0-windows\Themes\MenuButton.Nord.baml
 C:\Users\DoloresM\source\repos\CustomVPN\CustomVPN\obj\Debug\net5.0-windows\Themes\ConnectButton.Nord.baml
 C:\Users\DoloresM\source\repos\CustomVPN\CustomVPN\obj\Debug\net5.0-windows\Themes\ServerListTheme.Nord.baml
+C:\Users\DoloresM\source\repos\CustomVPN\CustomVPN\obj\Debug\net5.0-windows\Themes\DisconnectButton.Nord.baml

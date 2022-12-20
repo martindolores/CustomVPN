@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\DoloresM\source\repos\CustomVPN\CustomVPN\App.xaml
-71049537422
+8437819310
 
 121600768821
 193-1891726104
-MVVM\View\MainWindow.xaml;MVVM\View\ProtectionView.xaml;MVVM\View\SettingsView.xaml;Themes\ConnectButton.Nord.xaml;Themes\MenuButton.Nord.xaml;Themes\ServerListTheme.Nord.xaml;Themes\TitleBarButton.Nord.xaml;
+MVVM\View\MainWindow.xaml;MVVM\View\ProtectionView.xaml;MVVM\View\SettingsView.xaml;Themes\ConnectButton.Nord.xaml;Themes\DisconnectButton.Nord.xaml;Themes\MenuButton.Nord.xaml;Themes\ServerListTheme.Nord.xaml;Themes\TitleBarButton.Nord.xaml;
 
 False
 
