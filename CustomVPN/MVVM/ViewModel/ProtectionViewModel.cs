@@ -31,7 +31,6 @@ namespace CustomVPN.MVVM.ViewModel
         }
 
         private Visibility _disconnectButtonVisible;
-
         public Visibility DisconnectButtonVisible
         {
             get { return _disconnectButtonVisible; }
